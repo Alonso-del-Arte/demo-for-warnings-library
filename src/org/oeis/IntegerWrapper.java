@@ -56,7 +56,7 @@ public abstract class IntegerWrapper implements Comparable<IntegerWrapper> {
     @org.testframe.annotations.warnings.Untested
     @Override
     public boolean equals(Object obj) {
-        return false;
+        return true;
     }
     
     // TODO: Write tests for this
