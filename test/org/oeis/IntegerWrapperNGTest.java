@@ -36,8 +36,8 @@ public class IntegerWrapperNGTest {
         System.out.println("get8BitPrimitive");
         IntegerWrapper instance = null;
         byte expResult = 0;
-        byte result = instance.get8BitPrimitive();
-        assertEquals(result, expResult);
+//        byte result = instance.get8BitPrimitive();
+//        assertEquals(result, expResult);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
@@ -50,8 +50,8 @@ public class IntegerWrapperNGTest {
         System.out.println("get16BitPrimitive");
         IntegerWrapper instance = null;
         short expResult = 0;
-        short result = instance.get16BitPrimitive();
-        assertEquals(result, expResult);
+//        short result = instance.get16BitPrimitive();
+//        assertEquals(result, expResult);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
@@ -64,8 +64,8 @@ public class IntegerWrapperNGTest {
         System.out.println("get32BitPrimitive");
         IntegerWrapper instance = null;
         int expResult = 0;
-        int result = instance.get32BitPrimitive();
-        assertEquals(result, expResult);
+//        int result = instance.get32BitPrimitive();
+//        assertEquals(result, expResult);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
@@ -78,8 +78,8 @@ public class IntegerWrapperNGTest {
         System.out.println("get64BitPrimitive");
         IntegerWrapper instance = null;
         long expResult = 0L;
-        long result = instance.get64BitPrimitive();
-        assertEquals(result, expResult);
+//        long result = instance.get64BitPrimitive();
+//        assertEquals(result, expResult);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
@@ -93,8 +93,8 @@ public class IntegerWrapperNGTest {
         IntegerWrapper other = null;
         IntegerWrapper instance = null;
         boolean expResult = false;
-        boolean result = instance.arithmeticallyEqual(other);
-        assertEquals(result, expResult);
+//        boolean result = instance.arithmeticallyEqual(other);
+//        assertEquals(result, expResult);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
@@ -108,13 +108,13 @@ public class IntegerWrapperNGTest {
         IntegerWrapper other = null;
         IntegerWrapper instance = null;
         int expResult = 0;
-        int result = instance.compareTo(other);
-        assertEquals(result, expResult);
+//        int result = instance.compareTo(other);
+//        assertEquals(result, expResult);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
 
-    public class IntegerWrapperImpl extends IntegerWrapper {
+    private static class IntegerWrapperImpl extends IntegerWrapper {
 
         public IntegerWrapperImpl(long num) {
             super(num);
