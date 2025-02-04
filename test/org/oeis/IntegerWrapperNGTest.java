@@ -39,6 +39,14 @@ public class IntegerWrapperNGTest {
         assertEquals(actual, expected);
     }
     
+    @Test
+    public void testReferentialEquality() {
+        long num = RANDOM.nextLong();
+        IntegerWrapper instance = new IntegerWrapperImpl(num);
+        String msg = instance.toString() + " should be equal to itself";
+        assert instance.equals(instance) : msg;
+    }
+    
     /**
      * Test of get8BitPrimitive method, of class IntegerWrapper.
      */
