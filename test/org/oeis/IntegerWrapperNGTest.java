@@ -18,12 +18,23 @@ public class IntegerWrapperNGTest {
     
     static final Random RANDOM = new Random();
     
+    private static final char MINUS_SIGN = '\u2212';
+    
     @Test
     public void testToString() {
         System.out.println("toString");
         long num = RANDOM.nextLong() & Long.MAX_VALUE;
         IntegerWrapper instance = new IntegerWrapperImpl(num);
         String expected = Long.toString(num);
+        String actual = instance.toString();
+        assertEquals(actual, expected);
+    }
+    
+    @Test
+    public void testToStringNegative() {
+        long num = RANDOM.nextLong() | Long.MIN_VALUE;
+        IntegerWrapper instance = new IntegerWrapperImpl(num);
+        String expected = Long.toString(num).replace('-', MINUS_SIGN);
         String actual = instance.toString();
         assertEquals(actual, expected);
     }
