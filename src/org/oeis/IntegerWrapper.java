@@ -11,6 +11,8 @@ package org.oeis;
  */
 public abstract class IntegerWrapper implements Comparable<IntegerWrapper> {
     
+    private static final char MINUS_SIGN = '\u2212';
+    
     final long heldLong;
     
     // TODO: Write tests for this
@@ -52,7 +54,11 @@ public abstract class IntegerWrapper implements Comparable<IntegerWrapper> {
     
     @Override
     public String toString() {
-        return Long.toString(this.heldLong);
+        if (this.heldLong < 0) {
+            return MINUS_SIGN + Long.toString(Math.abs(this.heldLong));
+        } else {
+            return Long.toString(this.heldLong);
+        }
     }
 
     IntegerWrapper(long num) {
