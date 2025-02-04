@@ -11,6 +11,8 @@ package org.oeis;
  */
 public abstract class IntegerWrapper implements Comparable<IntegerWrapper> {
     
+    final long heldLong;
+    
     // TODO: Write tests for this
     @org.testframe.annotations.warnings.Untested
     public byte get8BitPrimitive() {
@@ -47,10 +49,14 @@ public abstract class IntegerWrapper implements Comparable<IntegerWrapper> {
     public int compareTo(IntegerWrapper other) {
         return 0;
     }
+    
+    @Override
+    public String toString() {
+        return Long.toString(this.heldLong);
+    }
 
-    // TODO: Write tests for this
-    @org.testframe.annotations.warnings.Untested
     IntegerWrapper(long num) {
+        this.heldLong = num;
     }
     
 }
