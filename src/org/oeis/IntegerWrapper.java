@@ -54,11 +54,7 @@ public abstract class IntegerWrapper implements Comparable<IntegerWrapper> {
     
     @Override
     public String toString() {
-        if (this.heldLong < 0) {
-            return MINUS_SIGN + Long.toString(Math.abs(this.heldLong));
-        } else {
-            return Long.toString(this.heldLong);
-        }
+        return Long.toString(this.heldLong).replace('-', MINUS_SIGN);
     }
 
     IntegerWrapper(long num) {
