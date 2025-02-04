@@ -5,18 +5,29 @@
  */
 package org.oeis;
 
+import java.util.Random;
+
 import static org.testng.Assert.*;
 import org.testng.annotations.Test;
 
 /**
- *
+ * Tests of the IntegerWrapper class.
  * @author Alonso del Arte
  */
 public class IntegerWrapperNGTest {
     
-    public IntegerWrapperNGTest() {
+    static final Random RANDOM = new Random();
+    
+    @Test
+    public void testToString() {
+        System.out.println("toString");
+        long num = RANDOM.nextLong() & Long.MAX_VALUE;
+        IntegerWrapper instance = new IntegerWrapperImpl(num);
+        String expected = Long.toString(num);
+        String actual = instance.toString();
+        assertEquals(actual, expected);
     }
-
+    
     /**
      * Test of get8BitPrimitive method, of class IntegerWrapper.
      */
@@ -105,8 +116,8 @@ public class IntegerWrapperNGTest {
 
     public class IntegerWrapperImpl extends IntegerWrapper {
 
-        public IntegerWrapperImpl() {
-            super(0L);
+        public IntegerWrapperImpl(long num) {
+            super(num);
         }
     }
     
