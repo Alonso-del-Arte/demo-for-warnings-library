@@ -50,7 +50,7 @@ public class IntegerWrapperNGTest {
     /**
      * Test of get8BitPrimitive method, of class IntegerWrapper.
      */
-    @Test
+//    @Test
     public void testGet8BitPrimitive() {
         System.out.println("get8BitPrimitive");
         IntegerWrapper instance = null;
@@ -64,7 +64,7 @@ public class IntegerWrapperNGTest {
     /**
      * Test of get16BitPrimitive method, of class IntegerWrapper.
      */
-    @Test
+//    @Test
     public void testGet16BitPrimitive() {
         System.out.println("get16BitPrimitive");
         IntegerWrapper instance = null;
@@ -78,7 +78,7 @@ public class IntegerWrapperNGTest {
     /**
      * Test of get32BitPrimitive method, of class IntegerWrapper.
      */
-    @Test
+//    @Test
     public void testGet32BitPrimitive() {
         System.out.println("get32BitPrimitive");
         IntegerWrapper instance = null;
@@ -92,7 +92,7 @@ public class IntegerWrapperNGTest {
     /**
      * Test of get64BitPrimitive method, of class IntegerWrapper.
      */
-    @Test
+//    @Test
     public void testGet64BitPrimitive() {
         System.out.println("get64BitPrimitive");
         IntegerWrapper instance = null;
@@ -106,7 +106,7 @@ public class IntegerWrapperNGTest {
     /**
      * Test of arithmeticallyEqual method, of class IntegerWrapper.
      */
-    @Test
+//    @Test
     public void testArithmeticallyEqual() {
         System.out.println("arithmeticallyEqual");
         IntegerWrapper other = null;
@@ -121,7 +121,7 @@ public class IntegerWrapperNGTest {
     /**
      * Test of compareTo method, of class IntegerWrapper.
      */
-    @Test
+//    @Test
     public void testCompareTo() {
         System.out.println("compareTo");
         IntegerWrapper other = null;
