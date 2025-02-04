@@ -52,6 +52,20 @@ public abstract class IntegerWrapper implements Comparable<IntegerWrapper> {
         return 0;
     }
     
+    // TODO: Write tests for this
+    @org.testframe.annotations.warnings.Untested
+    @Override
+    public boolean equals(Object obj) {
+        return false;
+    }
+    
+    // TODO: Write tests for this
+    @org.testframe.annotations.warnings.Untested
+    @Override
+    public int hashCode() {
+        return 0;
+    }
+    
     @Override
     public String toString() {
         return Long.toString(this.heldLong).replace('-', MINUS_SIGN);
