@@ -159,6 +159,27 @@ public class IntegerWrapperNGTest {
         System.out.println("\"" + excMsg + "\"");
     }
 
+    @Test
+    public void testOutOf8BitRangeHighCausesException() {
+        int outOfByteRangeNum = Byte.MAX_VALUE + RANDOM.nextInt(MAX_BYTE_EXCESS) 
+                + 1;
+        IntegerWrapper instance = new IntegerWrapperImpl(outOfByteRangeNum);
+        String msg = "Number " + outOfByteRangeNum 
+                + " is outside the range of byte";
+        Throwable t = assertThrows(() -> {
+            byte badResult = instance.get8BitPrimitive();
+            System.out.println(msg + ", not given result " + badResult);
+        }, ArithmeticException.class, msg);
+        String excMsg = t.getMessage();
+        assert excMsg != null : "Exception message should not be null";
+        assert !excMsg.isEmpty() : "Exception message should not be empty";
+        String numStr = Integer.toString(outOfByteRangeNum);
+        String containsMsg = "Exception message should contain \"" + numStr 
+                + "\"";
+        assert excMsg.contains(numStr) : containsMsg;
+        System.out.println("\"" + excMsg + "\"");
+    }
+
     /**
      * Test of get16BitPrimitive method, of class IntegerWrapper.
      */
