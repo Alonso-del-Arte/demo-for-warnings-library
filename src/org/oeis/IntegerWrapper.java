@@ -18,7 +18,7 @@ public abstract class IntegerWrapper implements Comparable<IntegerWrapper> {
     // TODO: Write tests for this
     @org.testframe.annotations.warnings.Untested
     public byte get8BitPrimitive() {
-        return 0;
+        return (byte) this.heldLong;
     }
     
     // TODO: Write tests for this
