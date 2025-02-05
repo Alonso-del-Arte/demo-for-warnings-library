@@ -115,17 +115,16 @@ public class IntegerWrapperNGTest {
     }
     
     /**
-     * Test of get8BitPrimitive method, of class IntegerWrapper.
+     * Test of the get8BitPrimitive function, of the IntegerWrapper class.
      */
-//    @Test
+    @Test
     public void testGet8BitPrimitive() {
         System.out.println("get8BitPrimitive");
-        IntegerWrapper instance = null;
-        byte expResult = 0;
-//        byte result = instance.get8BitPrimitive();
-//        assertEquals(result, expResult);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        int shift = 8 * RANDOM.nextInt(4);
+        byte expected = (byte) (RANDOM.nextInt() >> shift);
+        IntegerWrapper instance = new IntegerWrapperImpl(expected);
+        byte actual = instance.get8BitPrimitive();
+        assertEquals(actual, expected);
     }
 
     /**
