@@ -72,6 +72,17 @@ public class IntegerWrapperNGTest {
         assert !instanceImpl.equals(instanceAnon) : msg;
     }
     
+    @Test
+    public void testNotEqualsDiffNum() {
+        long numA = RANDOM.nextLong();
+        long numB = (numA >> 32) + 1;
+        IntegerWrapper instanceA = new IntegerWrapperImpl(numA);
+        IntegerWrapper instanceB = new IntegerWrapperImpl(numB);
+        String msg = instanceA.toString() + " should not equal " 
+                + instanceB.toString();
+        assert !instanceA.equals(instanceB) : msg;
+    }
+    
     /**
      * Test of get8BitPrimitive method, of class IntegerWrapper.
      */
