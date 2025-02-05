@@ -47,6 +47,18 @@ public class IntegerWrapperNGTest {
         assert instance.equals(instance) : msg;
     }
     
+    private static Object provideNull() {
+        return null;
+    }
+    
+    @Test
+    public void testNotEqualsNull() {
+        long num = RANDOM.nextLong();
+        IntegerWrapper instance = new IntegerWrapperImpl(num);
+        String msg = instance.toString() + " should not equal null";
+        assert !instance.equals(provideNull()) : msg;
+    }
+    
     /**
      * Test of get8BitPrimitive method, of class IntegerWrapper.
      */
