@@ -83,6 +83,17 @@ public class IntegerWrapperNGTest {
         assert !instanceA.equals(instanceB) : msg;
     }
     
+    @Test
+    public void testEquals() {
+        System.out.println("equals");
+        long num = RANDOM.nextLong();
+        IntegerWrapper someNumber = new IntegerWrapperImpl(num);
+        IntegerWrapper sameNumber = new IntegerWrapperImpl(num);
+        String msg = someNumber.toString() + " should equal " 
+                + sameNumber.toString();
+        assert someNumber.equals(sameNumber) : msg;
+    }
+    
     /**
      * Test of get8BitPrimitive method, of class IntegerWrapper.
      */
