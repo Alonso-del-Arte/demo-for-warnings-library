@@ -52,14 +52,6 @@ public abstract class IntegerWrapper implements Comparable<IntegerWrapper> {
         return 0;
     }
     
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        return this.getClass().equals(obj.getClass());
-    }
-    
     // TODO: Write tests for this
     @org.testframe.annotations.warnings.Untested
     @Override
