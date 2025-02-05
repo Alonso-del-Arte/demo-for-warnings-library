@@ -5,7 +5,9 @@
  */
 package org.oeis;
 
+import java.util.HashSet;
 import java.util.Random;
+import java.util.Set;
 
 import static org.testng.Assert.*;
 import org.testng.annotations.Test;
@@ -92,6 +94,24 @@ public class IntegerWrapperNGTest {
         String msg = someNumber.toString() + " should equal " 
                 + sameNumber.toString();
         assert someNumber.equals(sameNumber) : msg;
+    }
+    
+    @Test
+    public void testHashCode() {
+        System.out.println("hashCode");
+        int capacity = RANDOM.nextInt(64) + 16;
+        Set<IntegerWrapper> numbers = new HashSet<>(capacity);
+        Set<Integer> hashes = new HashSet<>(capacity);
+        for (int i = 0; i < capacity; i++) {
+            int num = RANDOM.nextInt() + i;
+            IntegerWrapper number = new IntegerWrapperImpl(num);
+            numbers.add(number);
+            hashes.add(number.hashCode());
+        }
+        int expected = numbers.size();
+        int actual = hashes.size();
+        String message = "Number of numbers should match number of hash codes";
+        assertEquals(actual, expected, message);
     }
     
     /**
