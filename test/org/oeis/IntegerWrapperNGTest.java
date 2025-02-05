@@ -9,6 +9,8 @@ import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
 
+import static org.testframe.api.Asserters.assertThrows;
+
 import static org.testng.Assert.*;
 import org.testng.annotations.Test;
 
@@ -21,6 +23,15 @@ public class IntegerWrapperNGTest {
     static final Random RANDOM = new Random();
     
     private static final char MINUS_SIGN = '\u2212';
+    
+    private static final short MAX_BYTE_EXCESS = Short.MAX_VALUE 
+            - Byte.MAX_VALUE;
+    
+    private static final int MAX_SHORT_EXCESS = Integer.MAX_VALUE 
+            - Short.MAX_VALUE;
+    
+    private static final long MAX_INT_EXCESS = Long.MAX_VALUE 
+            - Integer.MAX_VALUE;
     
     @Test
     public void testToString() {
@@ -125,6 +136,27 @@ public class IntegerWrapperNGTest {
         IntegerWrapper instance = new IntegerWrapperImpl(expected);
         byte actual = instance.get8BitPrimitive();
         assertEquals(actual, expected);
+    }
+    
+    @Test
+    public void testOutOf8BitRangeLowCausesException() {
+        int outOfByteRangeNum = Byte.MIN_VALUE - RANDOM.nextInt(MAX_BYTE_EXCESS) 
+                - 1;
+        IntegerWrapper instance = new IntegerWrapperImpl(outOfByteRangeNum);
+        String msg = "Number " + outOfByteRangeNum 
+                + " is outside the range of byte";
+        Throwable t = assertThrows(() -> {
+            byte badResult = instance.get8BitPrimitive();
+            System.out.println(msg + ", not given result " + badResult);
+        }, ArithmeticException.class, msg);
+        String excMsg = t.getMessage();
+        assert excMsg != null : "Exception message should not be null";
+        assert !excMsg.isEmpty() : "Exception message should not be empty";
+        String numStr = Integer.toString(outOfByteRangeNum);
+        String containsMsg = "Exception message should contain \"" + numStr 
+                + "\"";
+        assert excMsg.contains(numStr) : containsMsg;
+        System.out.println("\"" + excMsg + "\"");
     }
 
     /**
