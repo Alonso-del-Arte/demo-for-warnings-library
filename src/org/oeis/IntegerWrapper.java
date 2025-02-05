@@ -16,9 +16,9 @@ public abstract class IntegerWrapper implements Comparable<IntegerWrapper> {
     final long heldLong;
     
     public byte get8BitPrimitive() {
-        if (this.heldLong < Byte.MIN_VALUE) {
+        if (this.heldLong < Byte.MIN_VALUE || this.heldLong > Byte.MAX_VALUE) {
             String excMsg = "Number " + this.heldLong 
-                    + " is less than Byte.MIN_VALUE";
+                    + " is outside the range of byte";
             throw new ArithmeticException(excMsg);
         }
         return (byte) this.heldLong;
