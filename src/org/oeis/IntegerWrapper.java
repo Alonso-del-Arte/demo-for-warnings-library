@@ -66,11 +66,9 @@ public abstract class IntegerWrapper implements Comparable<IntegerWrapper> {
         return this.heldLong == ((IntegerWrapper) obj).heldLong;
     }
     
-    // TODO: Write tests for this
-    @org.testframe.annotations.warnings.Untested
     @Override
     public int hashCode() {
-        return 0;
+        return (int) this.heldLong;
     }
     
     @Override
