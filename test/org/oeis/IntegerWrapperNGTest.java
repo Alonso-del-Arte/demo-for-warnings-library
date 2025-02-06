@@ -237,17 +237,15 @@ public class IntegerWrapperNGTest {
     }
 
     /**
-     * Test of get32BitPrimitive method, of class IntegerWrapper.
+     * Test of the get32BitPrimitive function, of the IntegerWrapper class.
      */
-//    @Test
+    @Test
     public void testGet32BitPrimitive() {
         System.out.println("get32BitPrimitive");
-        IntegerWrapper instance = null;
-        int expResult = 0;
-//        int result = instance.get32BitPrimitive();
-//        assertEquals(result, expResult);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        int expected = RANDOM.nextInt();
+        IntegerWrapper instance = new IntegerWrapperImpl(expected);
+        int actual = instance.get32BitPrimitive();
+        assertEquals(actual, expected);
     }
 
     /**
