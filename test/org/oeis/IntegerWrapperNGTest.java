@@ -181,17 +181,17 @@ public class IntegerWrapperNGTest {
     }
 
     /**
-     * Test of get16BitPrimitive method, of class IntegerWrapper.
+     * Test of the get16BitPrimitive function, of the IntegerWrapper class.
      */
-//    @Test
+    @Test
     public void testGet16BitPrimitive() {
         System.out.println("get16BitPrimitive");
-        IntegerWrapper instance = null;
-        short expResult = 0;
-//        short result = instance.get16BitPrimitive();
-//        assertEquals(result, expResult);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        int propNum = RANDOM.nextInt();
+        int maybeShifted = (RANDOM.nextBoolean()) ? propNum >> 16 : propNum;
+        short expected = (short) maybeShifted;
+        IntegerWrapper instance = new IntegerWrapperImpl(expected);
+        short actual = instance.get16BitPrimitive();
+        assertEquals(actual, expected);
     }
 
     /**
