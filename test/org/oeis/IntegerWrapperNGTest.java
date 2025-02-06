@@ -323,18 +323,21 @@ public class IntegerWrapperNGTest {
     }
 
     /**
-     * Test of arithmeticallyEqual method, of class IntegerWrapper.
+     * Test of the arithmeticallyEqual function, of the IntegerWrapper class.
      */
-//    @Test
+    @Test
     public void testArithmeticallyEqual() {
         System.out.println("arithmeticallyEqual");
-        IntegerWrapper other = null;
-        IntegerWrapper instance = null;
-        boolean expResult = false;
-//        boolean result = instance.arithmeticallyEqual(other);
-//        assertEquals(result, expResult);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        long num = RANDOM.nextLong();
+        IntegerWrapper instanceImpl = new IntegerWrapperImpl(num);
+        IntegerWrapper instanceAnon = new IntegerWrapper(num) {
+        };
+        String msg = instanceImpl.toString() + " of class " 
+                + instanceImpl.getClass().getName() 
+                + " should be arithmetically equal to " 
+                + instanceAnon.toString() + " of class " 
+                + instanceAnon.getClass().getName();
+        assert instanceImpl.arithmeticallyEqual(instanceAnon) : msg;
     }
 
     /**
