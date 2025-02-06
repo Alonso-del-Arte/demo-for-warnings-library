@@ -48,10 +48,25 @@ public abstract class IntegerWrapper implements Comparable<IntegerWrapper> {
         return this.heldLong;
     }
     
-    // TODO: Write tests for this
-    @org.testframe.annotations.warnings.Untested
+    /**
+     * Determines whether or not this number is arithmetically equal to another 
+     * instance of {@code IntegerWrapper}. Unlike {@link 
+     * #equals(java.lang.Object) equals()}, the other number's runtime class is 
+     * not taken into account to make the determination. For the examples, 
+     * suppose this is instance is an {@link Int8} representing the number 120.
+     * @param other The number to compare for arithmetic equality. Examples: an 
+     * {@link Int16} holding 120, an {@link Int32} holding &minus;120 and an 
+     * {@link Int64} holding 120.
+     * @return True if the number is arithmetically equal, false otherwise. In 
+     * the examples, this would be true for the {@code Int16} and the {@code 
+     * Int64} instances but not the {@code Int32} instance which is said to hold 
+     * &minus;120, not 120.
+     * @throws NullPointerException If {@code other} is null. The exception 
+     * message might also be null depending on the version of the Java Virtual 
+     * Machine.
+     */
     public boolean arithmeticallyEqual(IntegerWrapper other) {
-        return false;
+        return this.heldLong == other.heldLong;
     }
     
     // TODO: Write tests for this
