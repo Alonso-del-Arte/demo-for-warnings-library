@@ -40,5 +40,6 @@ nbactions.xml
 nb-configuration.xml
 
 # Miscellaneous
+tempnotes.txt
 src/draft/
 test/draft/
