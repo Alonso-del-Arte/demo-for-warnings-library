@@ -6,7 +6,7 @@
 package org.oeis;
 
 /**
- *
+ * Wraps integer primitives.
  * @author Alonso del Arte
  */
 public abstract class IntegerWrapper implements Comparable<IntegerWrapper> {
@@ -44,10 +44,8 @@ public abstract class IntegerWrapper implements Comparable<IntegerWrapper> {
         return (int) this.heldLong;
     }
     
-    // TODO: Write tests for this
-    @org.testframe.annotations.warnings.Untested
     public long get64BitPrimitive() {
-        return 0L;
+        return this.heldLong;
     }
     
     // TODO: Write tests for this
