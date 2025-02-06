@@ -24,9 +24,12 @@ public abstract class IntegerWrapper implements Comparable<IntegerWrapper> {
         return (byte) this.heldLong;
     }
     
-    // TODO: Write tests for this
-    @org.testframe.annotations.warnings.Untested
     public short get16BitPrimitive() {
+        if (this.heldLong < Short.MIN_VALUE) {
+            String excMsg = "Number " + this.heldLong 
+                    + " is outside the range of short";
+            throw new ArithmeticException(excMsg);
+        }
         return (short) this.heldLong;
     }
     
