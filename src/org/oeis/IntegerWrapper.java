@@ -37,7 +37,7 @@ public abstract class IntegerWrapper implements Comparable<IntegerWrapper> {
     // TODO: Write tests for this
     @org.testframe.annotations.warnings.Untested
     public int get32BitPrimitive() {
-        return 0;
+        return (int) this.heldLong;
     }
     
     // TODO: Write tests for this
