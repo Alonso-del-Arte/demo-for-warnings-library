@@ -51,7 +51,7 @@ public abstract class IntegerWrapper implements Comparable<IntegerWrapper> {
     // TODO: Write tests for this
     @org.testframe.annotations.warnings.Untested
     public boolean arithmeticallyEqual(IntegerWrapper other) {
-        return true;
+        return false;
     }
     
     // TODO: Write tests for this
