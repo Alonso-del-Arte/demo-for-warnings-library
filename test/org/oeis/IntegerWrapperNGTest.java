@@ -269,6 +269,27 @@ public class IntegerWrapperNGTest {
         System.out.println("\"" + excMsg + "\"");
     }
 
+    @Test
+    public void testOutOf32BitRangeHighCausesException() {
+        long outOfIntRangeNum = ((long) Integer.MAX_VALUE) 
+                + (RANDOM.nextInt() & Integer.MAX_VALUE) + 1;
+        IntegerWrapper instance = new IntegerWrapperImpl(outOfIntRangeNum);
+        String msg = "Number " + outOfIntRangeNum 
+                + " is outside the range of int";
+        Throwable t = assertThrows(() -> {
+            int badResult = instance.get32BitPrimitive();
+            System.out.println(msg + ", not given result " + badResult);
+        }, ArithmeticException.class, msg);
+        String excMsg = t.getMessage();
+        assert excMsg != null : "Exception message should not be null";
+        assert !excMsg.isEmpty() : "Exception message should not be empty";
+        String numStr = Long.toString(outOfIntRangeNum);
+        String containsMsg = "Exception message should contain \"" + numStr 
+                + "\"";
+        assert excMsg.contains(numStr) : containsMsg;
+        System.out.println("\"" + excMsg + "\"");
+    }
+
     /**
      * Test of get64BitPrimitive method, of class IntegerWrapper.
      */
