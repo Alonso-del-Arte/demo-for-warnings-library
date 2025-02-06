@@ -291,17 +291,15 @@ public class IntegerWrapperNGTest {
     }
 
     /**
-     * Test of get64BitPrimitive method, of class IntegerWrapper.
+     * Test of the get64BitPrimitive function, of the IntegerWrapper class.
      */
-//    @Test
+    @Test
     public void testGet64BitPrimitive() {
         System.out.println("get64BitPrimitive");
-        IntegerWrapper instance = null;
-        long expResult = 0L;
-//        long result = instance.get64BitPrimitive();
-//        assertEquals(result, expResult);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        long expected = RANDOM.nextLong();
+        IntegerWrapper instance = new IntegerWrapperImpl(expected);
+        long actual = instance.get64BitPrimitive();
+        assertEquals(actual, expected);
     }
 
     /**
