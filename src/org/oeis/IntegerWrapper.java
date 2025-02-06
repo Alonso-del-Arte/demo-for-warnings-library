@@ -35,7 +35,8 @@ public abstract class IntegerWrapper implements Comparable<IntegerWrapper> {
     }
     
     public int get32BitPrimitive() {
-        if (this.heldLong < Integer.MIN_VALUE) {
+        if (this.heldLong < Integer.MIN_VALUE 
+                || this.heldLong > Integer.MAX_VALUE) {
             String excMsg = "Number " + this.heldLong 
                     + " is outside the range of int";
             throw new ArithmeticException(excMsg);
