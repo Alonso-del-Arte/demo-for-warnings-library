@@ -301,6 +301,26 @@ public class IntegerWrapperNGTest {
         long actual = instance.get64BitPrimitive();
         assertEquals(actual, expected);
     }
+    
+    private static long getDiffLong(long n) {
+        long propNum = n;
+        while (propNum == n) {
+            propNum = RANDOM.nextLong();
+        }
+        return propNum;
+    }
+    
+    @Test
+    public void testNotArithmeticallyEqual() {
+        long numberA = RANDOM.nextLong();
+        long numberB = getDiffLong(numberA);
+        IntegerWrapper someNumber = new IntegerWrapperImpl(numberA);
+        IntegerWrapper diffNumber = new IntegerWrapperImpl(numberB);
+        String msg = someNumber.toString() 
+                + " should not be arithmetically equal to " 
+                + diffNumber.toString();
+        assert !someNumber.arithmeticallyEqual(diffNumber) : msg;
+    }
 
     /**
      * Test of arithmeticallyEqual method, of class IntegerWrapper.
