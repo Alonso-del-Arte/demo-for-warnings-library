@@ -25,7 +25,8 @@ public abstract class IntegerWrapper implements Comparable<IntegerWrapper> {
     }
     
     public short get16BitPrimitive() {
-        if (this.heldLong < Short.MIN_VALUE) {
+        if (this.heldLong < Short.MIN_VALUE 
+                || this.heldLong > Short.MAX_VALUE) {
             String excMsg = "Number " + this.heldLong 
                     + " is outside the range of short";
             throw new ArithmeticException(excMsg);
