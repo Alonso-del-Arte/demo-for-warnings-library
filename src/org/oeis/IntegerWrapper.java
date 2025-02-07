@@ -15,7 +15,7 @@ public abstract class IntegerWrapper implements Comparable<IntegerWrapper> {
     
     final long heldLong;
     
-    public byte get8BitPrimitive() {
+    public final byte get8BitPrimitive() {
         if (this.heldLong < Byte.MIN_VALUE || this.heldLong > Byte.MAX_VALUE) {
             String excMsg = "Number " + this.heldLong 
                     + " is outside the range of byte";
@@ -24,7 +24,7 @@ public abstract class IntegerWrapper implements Comparable<IntegerWrapper> {
         return (byte) this.heldLong;
     }
     
-    public short get16BitPrimitive() {
+    public final short get16BitPrimitive() {
         if (this.heldLong < Short.MIN_VALUE 
                 || this.heldLong > Short.MAX_VALUE) {
             String excMsg = "Number " + this.heldLong 
@@ -34,7 +34,7 @@ public abstract class IntegerWrapper implements Comparable<IntegerWrapper> {
         return (short) this.heldLong;
     }
     
-    public int get32BitPrimitive() {
+    public final int get32BitPrimitive() {
         if (this.heldLong < Integer.MIN_VALUE 
                 || this.heldLong > Integer.MAX_VALUE) {
             String excMsg = "Number " + this.heldLong 
@@ -44,7 +44,7 @@ public abstract class IntegerWrapper implements Comparable<IntegerWrapper> {
         return (int) this.heldLong;
     }
     
-    public long get64BitPrimitive() {
+    public final long get64BitPrimitive() {
         return this.heldLong;
     }
     
@@ -65,12 +65,12 @@ public abstract class IntegerWrapper implements Comparable<IntegerWrapper> {
      * message might also be null depending on the version of the Java Virtual 
      * Machine.
      */
-    public boolean arithmeticallyEqual(IntegerWrapper other) {
+    public final boolean arithmeticallyEqual(IntegerWrapper other) {
         return this.heldLong == other.heldLong;
     }
     
     @Override
-    public int compareTo(IntegerWrapper other) {
+    public final int compareTo(IntegerWrapper other) {
         return Long.compare(this.heldLong, other.heldLong);
     }
     
