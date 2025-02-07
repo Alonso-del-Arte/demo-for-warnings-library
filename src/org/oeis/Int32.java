@@ -11,7 +11,7 @@ import org.testframe.annotations.warnings.NarrowingConversionWarning;
  *
  * @author Alonso del Arte
  */
-public class Int32 {
+public class Int32 extends IntegerWrapper {
     
     private final int heldInteger;
     
@@ -19,29 +19,34 @@ public class Int32 {
     @org.testframe.annotations.warnings.Untested
     @NarrowingConversionWarning(sourceType = Int32.class, 
             targetType = Int8.class)
+    @Override
     public Int8 toInt8() {
         return new Int8((byte) 0);
     }
     
     // TODO: Write tests for this
     @org.testframe.annotations.warnings.Untested
+    @Override
     public Int16 toInt16() {
         return new Int16((short) 0);
     }
     
     // TODO: Write tests for this
     @org.testframe.annotations.warnings.Untested
+    @Override
     public Int32 toInt32() {
         return new Int32(0);
     }
     
     // TODO: Write tests for this
     @org.testframe.annotations.warnings.Untested
+    @Override
     public Int64 toInt64() {
         return new Int64(0);
     }
     
     public Int32(int i) {
+        super(i);
         this.heldInteger = i;
     }
     
