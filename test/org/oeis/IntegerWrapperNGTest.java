@@ -80,6 +80,27 @@ public class IntegerWrapperNGTest {
         long num = RANDOM.nextLong();
         IntegerWrapper instanceImpl = new IntegerWrapperImpl(num);
         IntegerWrapper instanceAnon = new IntegerWrapper(num) {
+            
+            @Override
+            public Int8 toInt8() {
+                return new Int8((byte) num);
+            }
+            
+            @Override
+            public Int16 toInt16() {
+                return new Int16((short) num);
+            }
+            
+            @Override
+            public Int32 toInt32() {
+                return new Int32((int) num);
+            }
+            
+            @Override
+            public Int64 toInt64() {
+                return new Int64(num);
+            }
+            
         };
         String msg = instanceImpl.toString() + " of class " 
                 + instanceImpl.getClass().getName() + " should not equal " 
@@ -334,6 +355,27 @@ public class IntegerWrapperNGTest {
         long num = RANDOM.nextLong();
         IntegerWrapper instanceImpl = new IntegerWrapperImpl(num);
         IntegerWrapper instanceAnon = new IntegerWrapper(num) {
+            
+            @Override
+            public Int8 toInt8() {
+                return new Int8((byte) num);
+            }
+            
+            @Override
+            public Int16 toInt16() {
+                return new Int16((short) num);
+            }
+            
+            @Override
+            public Int32 toInt32() {
+                return new Int32((int) num);
+            }
+            
+            @Override
+            public Int64 toInt64() {
+                return new Int64(num);
+            }
+            
         };
         String msg = instanceImpl.toString() + " of class " 
                 + instanceImpl.getClass().getName() 
@@ -364,6 +406,26 @@ public class IntegerWrapperNGTest {
 
     private static class IntegerWrapperImpl extends IntegerWrapper {
 
+        @Override
+        public Int8 toInt8() {
+            return new Int8((byte) this.heldLong);
+        }
+            
+        @Override
+        public Int16 toInt16() {
+            return new Int16((short) this.heldLong);
+        }
+            
+        @Override
+        public Int32 toInt32() {
+            return new Int32((int) this.heldLong);
+        }
+            
+        @Override
+        public Int64 toInt64() {
+            return new Int64(this.heldLong);
+        }
+            
         public IntegerWrapperImpl(long num) {
             super(num);
         }

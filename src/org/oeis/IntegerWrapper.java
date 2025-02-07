@@ -15,6 +15,14 @@ public abstract class IntegerWrapper implements Comparable<IntegerWrapper> {
     
     final long heldLong;
     
+    public abstract Int8 toInt8();
+    
+    public abstract Int16 toInt16();
+    
+    public abstract Int32 toInt32();
+    
+    public abstract Int64 toInt64();
+    
     public final byte get8BitPrimitive() {
         if (this.heldLong < Byte.MIN_VALUE || this.heldLong > Byte.MAX_VALUE) {
             String excMsg = "Number " + this.heldLong 
