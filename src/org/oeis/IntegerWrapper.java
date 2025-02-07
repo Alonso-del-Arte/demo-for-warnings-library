@@ -69,11 +69,9 @@ public abstract class IntegerWrapper implements Comparable<IntegerWrapper> {
         return this.heldLong == other.heldLong;
     }
     
-    // TODO: Write tests for this
-    @org.testframe.annotations.warnings.Untested
     @Override
     public int compareTo(IntegerWrapper other) {
-        return 0;
+        return Long.compare(this.heldLong, other.heldLong);
     }
     
     @Override
