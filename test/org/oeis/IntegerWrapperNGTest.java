@@ -5,7 +5,10 @@
  */
 package org.oeis;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Random;
 import java.util.Set;
 
@@ -341,18 +344,22 @@ public class IntegerWrapperNGTest {
     }
 
     /**
-     * Test of compareTo method, of class IntegerWrapper.
+     * Test of the compareTo function, of the IntegerWrapper class.
      */
-//    @Test
+    @Test
     public void testCompareTo() {
         System.out.println("compareTo");
-        IntegerWrapper other = null;
-        IntegerWrapper instance = null;
-        int expResult = 0;
-//        int result = instance.compareTo(other);
-//        assertEquals(result, expResult);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        int capacity = RANDOM.nextInt(8) + 2;
+        List<IntegerWrapper> expected = new ArrayList<>(capacity);
+        int bound = 2 * Short.MAX_VALUE / capacity;
+        for (int i = Short.MIN_VALUE; i < Short.MAX_VALUE; 
+                i += RANDOM.nextInt(bound)) {
+            expected.add(new IntegerWrapperImpl(i));
+        }
+        List<IntegerWrapper> actual = new ArrayList<>(expected);
+        Collections.shuffle(actual);
+        Collections.sort(actual);
+        assertEquals(actual, expected);
     }
 
     private static class IntegerWrapperImpl extends IntegerWrapper {
