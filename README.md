@@ -1,6 +1,6 @@
 # Demo for Warnings Library
 
-PLACEHOLDER
+This project is to demonstrate the TestFrame Warnings Library.
 
 ## Dependencies
 
