@@ -14,8 +14,8 @@ import org.testframe.annotations.warnings.NarrowingConversionWarning;
 public class Int64 extends IntegerWrapper {
     
     // TODO: Write tests for this
-    @NarrowingConversionWarning(sourceType = Int64.class, 
-            targetType = Int8.class)
+//    @NarrowingConversionWarning(sourceType = Int64.class, 
+//            targetType = Int8.class)
     @org.testframe.annotations.warnings.Untested
     @Override
     public Int8 toInt8() {
