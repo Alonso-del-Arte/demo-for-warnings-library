@@ -5,36 +5,34 @@
  */
 package org.oeis;
 
+import static org.oeis.IntegerWrapperNGTest.RANDOM;
+
 import static org.testng.Assert.*;
 import org.testng.annotations.Test;
 
 /**
- *
+ * Test of the Int64 class.
  * @author Alonso del Arte
  */
 public class Int64NGTest {
     
-    public Int64NGTest() {
-    }
-
     /**
-     * Test of toInt8 method, of class Int64.
+     * Test of the toInt8 function, of the Int64 class.
      */
     @Test
     public void testToInt8() {
         System.out.println("toInt8");
-        Int64 instance = null;
-        Int8 expResult = null;
-        Int8 result = instance.toInt8();
-        assertEquals(result, expResult);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        long n = RANDOM.nextLong();
+        Int64 instance = new Int64(n);
+        Int8 expected = new Int8((byte) n);
+        Int8 actual = instance.toInt8();
+        assertEquals(actual, expected);
     }
 
     /**
      * Test of toInt16 method, of class Int64.
      */
-    @Test
+//    @Test
     public void testToInt16() {
         System.out.println("toInt16");
         Int64 instance = null;
@@ -48,7 +46,7 @@ public class Int64NGTest {
     /**
      * Test of toInt32 method, of class Int64.
      */
-    @Test
+//    @Test
     public void testToInt32() {
         System.out.println("toInt32");
         Int64 instance = null;
@@ -62,7 +60,7 @@ public class Int64NGTest {
     /**
      * Test of toInt64 method, of class Int64.
      */
-    @Test
+//    @Test
     public void testToInt64() {
         System.out.println("toInt64");
         Int64 instance = null;
