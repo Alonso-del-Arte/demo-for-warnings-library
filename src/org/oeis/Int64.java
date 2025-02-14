@@ -13,7 +13,6 @@ import org.testframe.annotations.warnings.NarrowingConversionWarning;
  */
 public class Int64 extends IntegerWrapper {
     
-    // TODO: Write tests for this
 //    @NarrowingConversionWarning(sourceType = Int64.class, 
 //            targetType = Int8.class)
     @Override
@@ -21,11 +20,9 @@ public class Int64 extends IntegerWrapper {
         return new Int8((byte) this.heldLong);
     }
     
-    // TODO: Write tests for this
-    @org.testframe.annotations.warnings.Untested
     @Override
     public Int16 toInt16() {
-        return new Int16(Short.MAX_VALUE);
+        return new Int16((short) this.heldLong);
     }
     
     // TODO: Write tests for this
