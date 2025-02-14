@@ -33,6 +33,11 @@ public class IntegerWrapperNGTest {
     private static final int MAX_SHORT_EXCESS = Integer.MAX_VALUE 
             - Short.MAX_VALUE;
     
+    static int randomPowerOfTwo() {
+        int shift = RANDOM.nextInt(31);
+        return 1 << shift;
+    }
+    
     @Test
     public void testToString() {
         System.out.println("toString");
