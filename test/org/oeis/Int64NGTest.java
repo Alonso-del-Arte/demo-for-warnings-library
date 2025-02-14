@@ -30,7 +30,7 @@ public class Int64NGTest {
             Int8 expected = new Int8(b);
             Int8 actual = instance.toInt8();
             assertEquals(actual, expected);
-            source >>= 8;
+            source >>>= 8;
         }
     }
 
@@ -47,7 +47,7 @@ public class Int64NGTest {
             Int16 expected = new Int16(sh);
             Int16 actual = instance.toInt16();
             assertEquals(actual, expected);
-            source >>= 16;
+            source >>>= 16;
         }
     }
 
