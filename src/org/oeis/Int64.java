@@ -16,10 +16,9 @@ public class Int64 extends IntegerWrapper {
     // TODO: Write tests for this
 //    @NarrowingConversionWarning(sourceType = Int64.class, 
 //            targetType = Int8.class)
-    @org.testframe.annotations.warnings.Untested
     @Override
     public Int8 toInt8() {
-        return new Int8(Byte.MAX_VALUE);
+        return new Int8((byte) this.heldLong);
     }
     
     // TODO: Write tests for this
