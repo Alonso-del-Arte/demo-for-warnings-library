@@ -6,6 +6,7 @@
 package org.oeis;
 
 import static org.oeis.IntegerWrapperNGTest.RANDOM;
+import static org.oeis.IntegerWrapperNGTest.randomPowerOfTwo;
 
 import static org.testng.Assert.*;
 import org.testng.annotations.Test;
@@ -30,17 +31,20 @@ public class Int64NGTest {
     }
 
     /**
-     * Test of toInt16 method, of class Int64.
+     * Test of the toInt16 function, of the Int64 class.
      */
-//    @Test
+    @Test
     public void testToInt16() {
         System.out.println("toInt16");
-        Int64 instance = null;
-        Int16 expResult = null;
-        Int16 result = instance.toInt16();
-        assertEquals(result, expResult);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        long source = RANDOM.nextLong() | randomPowerOfTwo();
+        while (source != 0) {
+            short sh = (short) source;
+            Int64 instance = new Int64(sh);
+            Int16 expected = new Int16(sh);
+            Int16 actual = instance.toInt16();
+            assertEquals(actual, expected);
+            source >>= 16;
+        }
     }
 
     /**
