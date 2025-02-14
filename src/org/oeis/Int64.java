@@ -18,7 +18,7 @@ public class Int64 extends IntegerWrapper {
 //            targetType = Int8.class)
     @Override
     public Int8 toInt8() {
-        return new Int8((byte) this.heldLong);
+        return new Int8(Byte.MIN_VALUE);
     }
     
     // TODO: Write tests for this
