@@ -33,9 +33,6 @@ public class IntegerWrapperNGTest {
     private static final int MAX_SHORT_EXCESS = Integer.MAX_VALUE 
             - Short.MAX_VALUE;
     
-    private static final long MAX_INT_EXCESS = Long.MAX_VALUE 
-            - Integer.MAX_VALUE;
-    
     @Test
     public void testToString() {
         System.out.println("toString");
