@@ -23,11 +23,15 @@ public class Int64NGTest {
     @Test
     public void testToInt8() {
         System.out.println("toInt8");
-        long n = RANDOM.nextLong();
-        Int64 instance = new Int64(n);
-        Int8 expected = new Int8((byte) n);
-        Int8 actual = instance.toInt8();
-        assertEquals(actual, expected);
+        long source = RANDOM.nextLong() | randomPowerOfTwo();
+        while (source != 0) {
+            byte b = (byte) source;
+            Int64 instance = new Int64(b);
+            Int8 expected = new Int8(b);
+            Int8 actual = instance.toInt8();
+            assertEquals(actual, expected);
+            source >>= 8;
+        }
     }
 
     /**
