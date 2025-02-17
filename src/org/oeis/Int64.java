@@ -25,11 +25,9 @@ public class Int64 extends IntegerWrapper {
         return new Int16((short) this.heldLong);
     }
     
-    // TODO: Write tests for this
-    @org.testframe.annotations.warnings.Untested
     @Override
     public Int32 toInt32() {
-        return new Int32(Integer.MAX_VALUE);
+        return new Int32((int) this.heldLong);
     }
     
     // TODO: Write tests for this
