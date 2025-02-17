@@ -54,15 +54,18 @@ public class Int64NGTest {
     /**
      * Test of toInt32 method, of class Int64.
      */
-//    @Test
+    @Test
     public void testToInt32() {
         System.out.println("toInt32");
-        Int64 instance = null;
-        Int32 expResult = null;
-        Int32 result = instance.toInt32();
-        assertEquals(result, expResult);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        long source = RANDOM.nextLong() | Long.MIN_VALUE;
+        while (source != 0) {
+            int i = (int) source;
+            Int64 instance = new Int64(i);
+            Int32 expected = new Int32(i);
+            Int32 actual = instance.toInt32();
+            assertEquals(actual, expected);
+            source >>>= 1;
+        }
     }
 
     /**
