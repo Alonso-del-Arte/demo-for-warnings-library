@@ -52,7 +52,7 @@ public class Int64NGTest {
     }
 
     /**
-     * Test of toInt32 method, of class Int64.
+     * Test of the toInt32 function, of the Int64 class.
      */
     @Test
     public void testToInt32() {
@@ -69,17 +69,17 @@ public class Int64NGTest {
     }
 
     /**
-     * Test of toInt64 method, of class Int64.
+     * Test of the toInt64 function, of the Int64 class.
      */
-//    @Test
+    @Test
     public void testToInt64() {
         System.out.println("toInt64");
-        Int64 instance = null;
-        Int64 expResult = null;
-        Int64 result = instance.toInt64();
-        assertEquals(result, expResult);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        for (int i = 1; i < 65; i++) {
+            long n = RANDOM.nextLong() * i;
+            Int64 expected = new Int64(n);
+            Int64 actual = expected.toInt64();
+            assertEquals(actual, expected);
+        }
     }
     
 }
